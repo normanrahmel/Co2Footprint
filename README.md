@@ -1,27 +1,15 @@
-# Co2Footprint
+AppComponent: Dies ist die Hauptkomponente, die das Layout der gesamten Anwendung steuert und alle anderen Komponenten einbindet.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
+HeaderComponent: Diese Komponente enthält den Titel und das Logo der Webseite sowie die globale Navigation.
 
-## Development server
+FooterComponent: Diese Komponente enthält die rechtlichen Hinweise.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+MenuComponent: Diese Komponente enthält das lokale Menü mit Links und wird je nach Schriftkultur rechts oder links dargestellt.
 
-## Code scaffolding
+ContentComponent: Diese Komponente enthält den Inhalt der Webseite.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+CO2TableComponent: Diese Komponente enthält die Tabelle mit den CO2-Emissionsdaten, die nach Land und Unternehmen sortiert und gefiltert werden kann.
 
-## Build
+InputFieldsComponent: Diese Komponente enthält alle Eingabefelder und stellt sicher, dass kein injizierter Code ausgeführt werden kann.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+ResponsiveComponent: Diese Komponente ist verantwortlich für die Anpassung der Webseite an verschiedene Gerätegrößen und Bildschirmauflösungen, um sicherzustellen, dass die Webseite auf allen Geräten gut lesbar dargestellt wird.
