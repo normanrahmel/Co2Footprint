@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 15px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 16px;
+}
+nav {
+    display: flex;
+    justify-content: center;
+}
+nav a {
+    margin-left: 16px;
+}
+
+img {
+    height: 85px;
+    margin-right: 16px;
+    border-radius: 50%;
+}
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 16px;
+    /* width: 100%; */ /* entfernt */
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+}
