@@ -1,9 +1,10 @@
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 100%;
-    margin: 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 .logo {
     display: flex;
@@ -18,7 +19,7 @@
 }
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 nav a {
     margin-left: 16px;
@@ -28,14 +29,4 @@ img {
     height: 85px;
     margin-right: 16px;
     border-radius: 50%;
-}
-.mat-toolbar-row,
-.mat-toolbar-single-row {
-    display: flex;
-    box-sizing: border-box;
-    padding: 0 16px;
-    /* width: 100%; */ /* entfernt */
-    flex-direction: row;
-    align-items: center;
-    white-space: nowrap;
 }
