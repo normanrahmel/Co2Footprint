@@ -10,7 +10,10 @@ export interface CO2Data {
 
 const CO2_DATAS: CO2Data[] = [
   { country: 'Deutschland', company: 'Volkswagen', emissions: 1000 },
+  { country: 'Deutschland', company: 'BMW', emissions: 950 },
   { country: 'USA', company: 'ExxonMobil', emissions: 500 },
+  { country: 'USA', company: 'Ford', emissions: 900 },
+  { country: 'USA', company: 'Apple', emissions: 1900 },
   { country: 'China', company: 'Sinopec Group', emissions: 750 },
   { country: 'Indien', company: 'Reliance Industries', emissions: 300 },
   { country: 'Russland', company: 'Gazprom', emissions: 400 },
@@ -85,19 +88,37 @@ export class Co2TableComponent implements OnInit {
     this.dataSource.data = this.dataSource.data.sort((a, b) => {
       switch (column) {
         case 'co2Emission':
-          return compare(a.emissions, b.emissions, isAsc);
+          return this.compare(a.emissions, b.emissions, isAsc);
         case 'country':
-          return compare(a.country, b.country, isAsc);
+          return this.compare(a.country, b.country, isAsc);
         case 'company':
-          return compare(a.company, b.company, isAsc);
+          return this.compare(a.company, b.company, isAsc);
         default:
           return 0;
       }
     });
     this.dataSource.filter = this.dataSource.filter;
   }
-}
 
-function compare(a: number | string, b: number | string, isAsc: boolean) {
-  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+  compare(a: number | string, b: number | string, isAsc: boolean) {
+    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+  }
+
+  sortDataByRow(column: string) {
+    const isAsc = this.sort.direction === 'asc';
+    switch (column) {
+      case 'country':
+        this.dataSource.data = this.dataSource.data.sort((a, b) =>
+          this.compare(a.country, b.country, isAsc)
+        );
+        break;
+      case 'company':
+        this.dataSource.data = this.dataSource.data.sort((a, b) =>
+          this.compare(a.company, b.company, isAsc)
+        );
+        break;
+      default:
+        return;
+    }
+  }
 }
