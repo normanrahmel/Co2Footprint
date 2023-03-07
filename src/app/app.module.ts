@@ -10,8 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { ContentComponent } from './content/content.component';
 import { Co2TableComponent } from './co2-table/co2-table.component';
-import { InputFieldsComponent } from './input-fields/input-fields.component';
-import { ResponsiveComponent } from './responsive/responsive.component';
+
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
@@ -25,8 +24,6 @@ import { MatInputModule } from '@angular/material/input';
     MenuComponent,
     ContentComponent,
     Co2TableComponent,
-    InputFieldsComponent,
-    ResponsiveComponent,
   ],
   imports: [
     BrowserModule,

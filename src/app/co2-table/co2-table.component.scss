@@ -6,3 +6,11 @@
     height: 30px;
     margin: 20px;
 }
+@media only screen and (max-width: 450px) {
+    .input-search {
+        width: 50%;
+    }
+    .table {
+        margin: 0;
+    }
+}
