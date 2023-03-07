@@ -36,3 +36,22 @@
     text-decoration: underline;
     margin-right: 16px;
 }
+@media only screen and (max-width: 550px) {
+    .footer {
+        max-width: fit-content;
+        word-wrap: break-word;
+        height: auto;
+    }
+    .text {
+        word-wrap: break-word;
+        margin: 0;
+    }
+    .text br {
+        display: block;
+        content: "";
+        margin: 10px 0;
+    }
+    .toolbar {
+        height: auto;
+    }
+}

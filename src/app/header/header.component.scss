@@ -30,3 +30,8 @@ img {
     margin-right: 16px;
     border-radius: 50%;
 }
+@media only screen and (max-width: 550px) {
+    .header {
+        flex-direction: column;
+    }
+}

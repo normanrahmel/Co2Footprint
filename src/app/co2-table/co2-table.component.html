@@ -1,5 +1,10 @@
-<div class="mat-elevation-z8">
-  <input matInput (keyup)="applyFilter($event)" placeholder="Filter" />
+<div class="mat-elevation-z8 table">
+  <input
+    class="input-search"
+    matInput
+    (keyup)="applyFilter($event)"
+    placeholder="Filter"
+  />
   <table mat-table [dataSource]="dataSource" matSort>
     <ng-container matColumnDef="country">
       <a href="" (click)="sortDataByRow('country')"
