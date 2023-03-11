@@ -1,22 +1,47 @@
-<div class="welcome-text">
-  Willkommen auf unserer CO2-Daten-Webseite!
+<div class="text">
+  <div class="welcome-text" *ngIf="!isLanguageEnglish()">
+    Willkommen auf unserer CO2-Daten-Webseite!
+    <br />
+    <br />
+    <p class="intro-text">
+      Hier können Sie sich einen Überblick darüber verschaffen, welche
+      Unternehmen und Länder wie viel CO2 jährlich emittieren. <br />
+      Unsere Webseite bietet die Möglichkeit, die Daten nach Country, Company
+      und Emissionen zu filtern und zu sortieren.
+
+      <br />
+      <br />
+      Wir sind ein interdisziplinäres Team, das professionelle Webseiten für
+      eine große Non-Profit-Organisation entwickelt, die sich mit dem
+      Klimawandel beschäftigt. <br />
+      Unsere Webseite soll mehr Transparenz darüber schaffen, welche
+      Auswirkungen die CO2-Emissionen auf die Umwelt haben.
+      <br />
+      <br />
+      Vielen Dank für Ihren Besuch auf unserer Webseite. Wir hoffen, dass Sie
+      die Informationen, die wir hier bereitstellen, hilfreich finden.
+    </p>
+  </div>
+</div>
+
+<div class="welcome-text" *ngIf="isLanguageEnglish()">
+  Welcome to our CO2 data website!
   <br />
   <br />
   <p class="intro-text">
-    Hier können Sie sich einen Überblick darüber verschaffen, welche Unternehmen
-    und Länder wie viel CO2 jährlich emittieren. <br />
-    Unsere Webseite bietet die Möglichkeit, die Daten nach Country, Company und
-    Emissionen zu filtern und zu sortieren.
-
+    Here, you can get an overview of which countries and companies emit how much
+    CO2 annually. <br />
+    Our website provides the ability to filter and sort the data by country,
+    company, and emissions.
     <br />
-    Wir sind ein interdisziplinäres Team, das professionelle Webseiten für eine
-    große Non-Profit-Organisation entwickelt, die sich mit dem Klimawandel
-    beschäftigt. <br />
-    Unsere Webseite soll mehr Transparenz darüber schaffen, welche Auswirkungen
-    die CO2-Emissionen auf die Umwelt haben.
-
     <br />
-    Vielen Dank für Ihren Besuch auf unserer Webseite. Wir hoffen, dass Sie die
-    Informationen, die wir hier bereitstellen, hilfreich finden.
+    We are an interdisciplinary team developing professional websites for a
+    large non-profit organization dedicated to addressing climate change. <br />
+    Our website aims to provide more transparency on the impact of CO2 emissions
+    on the environment.
+    <br />
+    <br />
+    Thank you for visiting our website. We hope you find the information we
+    provide here helpful.
   </p>
 </div>

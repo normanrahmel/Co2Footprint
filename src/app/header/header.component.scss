@@ -5,6 +5,7 @@
     height: 100%;
     margin-top: 8px;
     margin-bottom: 8px;
+    color: black;
 }
 .logo {
     display: flex;
@@ -30,8 +31,11 @@ img {
     margin-right: 16px;
     border-radius: 50%;
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 581px) {
     .header {
         flex-direction: column;
     }
+}
+.mat-toolbar.mat-primary {
+    background-color: rgba(172, 255, 47, 0.688);
 }

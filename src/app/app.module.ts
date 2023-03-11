@@ -8,9 +8,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
-import { ContentComponent } from './content/content.component';
-import { Co2TableComponent } from './co2-table/co2-table.component';
 
+import { Co2TableComponent } from './co2-table/co2-table.component';
+import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
@@ -22,13 +22,14 @@ import { MatInputModule } from '@angular/material/input';
     HeaderComponent,
     FooterComponent,
     MenuComponent,
-    ContentComponent,
+
     Co2TableComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule,
     MatToolbarModule,
     MatFormFieldModule,

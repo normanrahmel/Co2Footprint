@@ -8,7 +8,7 @@ export interface CO2Data {
   emissions: number;
 }
 
-const CO2_DATAS: CO2Data[] = [
+const CO2_DATAS_DE: CO2Data[] = [
   { country: 'Deutschland', company: 'Volkswagen', emissions: 1000 },
   { country: 'Deutschland', company: 'BMW', emissions: 950 },
   { country: 'USA', company: 'ExxonMobil', emissions: 500 },
@@ -43,6 +43,41 @@ const CO2_DATAS: CO2Data[] = [
   { country: 'Irak', company: 'Iraq National Oil Co.', emissions: 120 },
   { country: 'Libyen', company: 'NOC', emissions: 100 },
 ];
+const CO2_DATAS_EN: CO2Data[] = [
+  { country: 'Germany', company: 'Volkswagen', emissions: 1000 },
+  { country: 'Germany', company: 'BMW', emissions: 950 },
+  { country: 'USA', company: 'ExxonMobil', emissions: 500 },
+  { country: 'USA', company: 'Ford', emissions: 900 },
+  { country: 'USA', company: 'Apple', emissions: 1900 },
+  { country: 'China', company: 'Sinopec Group', emissions: 750 },
+  { country: 'India', company: 'Reliance Industries', emissions: 300 },
+  { country: 'Russia', company: 'Gazprom', emissions: 400 },
+  { country: 'Japan', company: 'Mitsubishi', emissions: 200 },
+  { country: 'Brazil', company: 'Petrobras', emissions: 100 },
+  { country: 'Canada', company: 'Suncor Energy', emissions: 50 },
+  { country: 'Saudi Arabia', company: 'Saudi Aramco', emissions: 25 },
+  { country: 'Mexico', company: 'Pemex', emissions: 10 },
+  { country: 'Spain', company: 'Repsol', emissions: 450 },
+  { country: 'Norway', company: 'Equinor', emissions: 150 },
+  { country: 'Netherlands', company: 'Shell', emissions: 800 },
+  { country: 'Switzerland', company: 'Gaznat', emissions: 50 },
+  { country: 'Indonesia', company: 'PT Pertamina', emissions: 275 },
+  { country: 'South Africa', company: 'Sasol', emissions: 200 },
+  { country: 'Qatar', company: 'Qatar Petroleum', emissions: 50 },
+  { country: 'Australia', company: 'BHP', emissions: 120 },
+  { country: 'Iran', company: 'National Iranian Oil Co.', emissions: 180 },
+  { country: 'United Arab Emirates', company: 'ADNOC', emissions: 85 },
+  { country: 'France', company: 'Total', emissions: 300 },
+  { country: 'Kuwait', company: 'Kuwait Petroleum', emissions: 75 },
+  { country: 'United Kingdom', company: 'BP', emissions: 550 },
+  { country: 'Kazakhstan', company: 'KazMunayGas', emissions: 80 },
+  { country: 'Thailand', company: 'PTT Public Company', emissions: 125 },
+  { country: 'Nigeria', company: 'NNPC', emissions: 150 },
+  { country: 'Vietnam', company: 'PetroVietnam', emissions: 90 },
+  { country: 'Algeria', company: 'Sonatrach', emissions: 70 },
+  { country: 'Iraq', company: 'Iraq National Oil Co.', emissions: 120 },
+  { country: 'Libya', company: 'NOC', emissions: 100 },
+];
 
 @Component({
   selector: 'app-co2-table',
@@ -55,7 +90,11 @@ export class Co2TableComponent implements OnInit {
   sort: MatSort = new MatSort();
 
   constructor() {
-    this.dataSource = new MatTableDataSource(CO2_DATAS);
+    if (navigator.language === 'de-DE') {
+      this.dataSource = new MatTableDataSource(CO2_DATAS_DE);
+    } else {
+      this.dataSource = new MatTableDataSource(CO2_DATAS_EN);
+    }
   }
 
   ngOnInit() {
