@@ -42,6 +42,16 @@ const CO2_DATAS_DE: CO2Data[] = [
   { country: 'Algerien', company: 'Sonatrach', emissions: 70 },
   { country: 'Irak', company: 'Iraq National Oil Co.', emissions: 120 },
   { country: 'Libyen', company: 'NOC', emissions: 100 },
+  { country: 'Italien', company: 'ENI', emissions: 250 },
+  { country: 'Argentinien', company: 'YPF', emissions: 50 },
+  { country: 'Kolumbien', company: 'ECOPETROL', emissions: 50 },
+  { country: 'Südkorea', company: 'Korea National Oil Corp.', emissions: 150 },
+  { country: 'Polen', company: 'PKN Orlen', emissions: 100 },
+  { country: 'Ukraine', company: 'Naftogaz', emissions: 50 },
+  { country: 'Türkei', company: 'Turkmenistan', emissions: 50 },
+  { country: 'Österreich', company: 'OMV', emissions: 50 },
+  { country: 'Belgien', company: 'Total', emissions: 50 },
+  { country: 'Tschechien', company: 'CEZ', emissions: 50 },
 ];
 const CO2_DATAS_EN: CO2Data[] = [
   { country: 'Germany', company: 'Volkswagen', emissions: 1000 },
@@ -77,6 +87,25 @@ const CO2_DATAS_EN: CO2Data[] = [
   { country: 'Algeria', company: 'Sonatrach', emissions: 70 },
   { country: 'Iraq', company: 'Iraq National Oil Co.', emissions: 120 },
   { country: 'Libya', company: 'NOC', emissions: 100 },
+  { country: 'Italy', company: 'ENI', emissions: 200 },
+  { country: 'Turkey', company: 'Turkmenistan', emissions: 150 },
+  { country: 'Ukraine', company: 'Ukrnafta', emissions: 100 },
+  { country: 'Poland', company: 'PKN Orlen', emissions: 50 },
+  { country: 'Romania', company: 'Rompetrol', emissions: 50 },
+  { country: 'Argentina', company: 'YPF', emissions: 50 },
+  { country: 'Colombia', company: 'Ecopetrol', emissions: 50 },
+  { country: 'Peru', company: 'Perenco', emissions: 50 },
+  { country: 'Chile', company: 'Enap', emissions: 50 },
+  { country: 'Ecuador', company: 'Petroamazonas', emissions: 50 },
+  { country: 'Venezuela', company: 'PDVSA', emissions: 50 },
+  {
+    country: 'Bolivia',
+    company: 'Yacimientos Petroliferos Fiscales Bolivianos',
+    emissions: 50,
+  },
+  { country: 'Estonia', company: 'Eesti Energia', emissions: 50 },
+  { country: 'Finland', company: 'Neste', emissions: 50 },
+  { country: 'Sweden', company: 'Statoil', emissions: 50 },
 ];
 
 @Component({
