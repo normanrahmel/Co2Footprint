@@ -175,17 +175,28 @@ export class Co2TableComponent implements OnInit {
     return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
   }
 
+  // Wird beim Klicken auf eine Tabellenspalte aufgerufen wird, um die Spalte zu sortieren
   sortColumn(column: string) {
+    // Wenn die aktive Sortierspalte mit der geklickten Spalte übereinstimmt
     if (this.activeSortColumn === column) {
+      // Ändere die Sortierrichtung, entweder von 'asc' nach 'desc' oder umgekehrt
       this.activeSortDirection =
         this.activeSortDirection === 'asc' ? 'desc' : 'asc';
+
+      // Andernfalls (wenn eine andere Spalte angeklickt wurde)
     } else {
+      // Aktualisiere die aktive Sortierspalte auf die geklickte Spalte
       this.activeSortColumn = column;
+      // und setze die Sortierrichtung auf 'asc' (aufsteigend)
       this.activeSortDirection = 'asc';
     }
+    // Aktualisiere die Sortierreihenfolge des DataSources
     this.dataSource.sort?.sort({
+      // Sortierspalte ist die geklickte Spalte
       id: column,
+      // Sortierrichtung ist die aktuelle Sortierrichtung
       start: this.activeSortDirection,
+      // Deaktiviere die Schaltfläche zum Löschen der Sortierung
       disableClear: true,
     });
   }
