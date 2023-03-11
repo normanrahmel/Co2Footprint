@@ -6,27 +6,42 @@
     placeholder="Filter"
   />
   <table mat-table [dataSource]="dataSource" matSort>
+    <!-- Country -->
     <ng-container matColumnDef="country">
-      <a href="" (click)="sortDataByRow('country')"
-        ><th mat-header-cell *matHeaderCellDef mat-sort-header>Country</th></a
-      >
-      <td mat-cell *matCellDef="let element">{{ element.country }}</td>
-    </ng-container>
-    <ng-container matColumnDef="company">
       <th
+        class="klick-event"
         mat-header-cell
         *matHeaderCellDef
         mat-sort-header
-        (click)="sortDataByRow('company')"
+        (click)="sortColumn('country')"
+      >
+        Country
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.country }}</td>
+    </ng-container>
+
+    <!-- Company -->
+    <ng-container matColumnDef="company">
+      <th
+        (click)="sortColumn('company')"
+        class="klick-event"
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
       >
         Company
       </th>
-      <td mat-cell *matCellDef="let element">{{ element.company }}</td>
+      <td mat-cell *matCellDef="let element">
+        {{ element.company }}
+      </td>
     </ng-container>
+
+    <!-- CO2 Emission -->
     <ng-container matColumnDef="co2Emission">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>CO2 Emission</th>
       <td mat-cell *matCellDef="let element">{{ element.emissions }}</td>
     </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>

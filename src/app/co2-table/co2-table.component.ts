@@ -118,6 +118,9 @@ export class Co2TableComponent implements OnInit {
   displayedColumns: string[] = ['country', 'company', 'co2Emission'];
   sort: MatSort = new MatSort();
 
+  activeSortColumn: string;
+  activeSortDirection: 'asc' | 'desc';
+
   constructor() {
     if (navigator.language === 'de-DE') {
       this.dataSource = new MatTableDataSource(CO2_DATAS_DE);
@@ -172,21 +175,18 @@ export class Co2TableComponent implements OnInit {
     return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
   }
 
-  sortDataByRow(column: string) {
-    const isAsc = this.sort.direction === 'asc';
-    switch (column) {
-      case 'country':
-        this.dataSource.data = this.dataSource.data.sort((a, b) =>
-          this.compare(a.country, b.country, isAsc)
-        );
-        break;
-      case 'company':
-        this.dataSource.data = this.dataSource.data.sort((a, b) =>
-          this.compare(a.company, b.company, isAsc)
-        );
-        break;
-      default:
-        return;
+  sortColumn(column: string) {
+    if (this.activeSortColumn === column) {
+      this.activeSortDirection =
+        this.activeSortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.activeSortColumn = column;
+      this.activeSortDirection = 'asc';
     }
+    this.dataSource.sort?.sort({
+      id: column,
+      start: this.activeSortDirection,
+      disableClear: true,
+    });
   }
 }
