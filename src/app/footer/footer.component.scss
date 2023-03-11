@@ -1,16 +1,17 @@
 .footer {
-    position: fixed;
-    bottom: 0;
+    position: absolute;
     width: 100%;
-    height: 110px;
+    height: 100px;
 }
 
 .toolbar {
     background-color: #333;
-    height: 110px;
+    height: 100px;
 }
 
 .footer-container {
+    position: absolute;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,6 +37,7 @@
     text-decoration: underline;
     margin-right: 16px;
 }
+
 @media only screen and (max-width: 550px) {
     .footer {
         max-width: fit-content;
