@@ -1,3 +1,4 @@
+<!--(keyup)="applyFilter($event)"-->
 <div class="mat-elevation-z8 table">
   <input
     class="input-search"
@@ -17,7 +18,9 @@
       >
         Country
       </th>
-      <td mat-cell *matCellDef="let element">{{ element.country }}</td>
+      <td mat-cell *matCellDef="let element">
+        {{ element.country }}
+      </td>
     </ng-container>
 
     <!-- Company -->
@@ -39,7 +42,9 @@
     <!-- CO2 Emission -->
     <ng-container matColumnDef="co2Emission">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>CO2 Emission</th>
-      <td mat-cell *matCellDef="let element">{{ element.emissions }}</td>
+      <td mat-cell *matCellDef="let element">
+        {{ element.emissions }}
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

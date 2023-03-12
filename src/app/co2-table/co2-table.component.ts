@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SecurityContext } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -121,7 +122,7 @@ export class Co2TableComponent implements OnInit {
   activeSortColumn: string;
   activeSortDirection: 'asc' | 'desc';
 
-  constructor() {
+  constructor(private sanitizer: DomSanitizer) {
     if (navigator.language === 'de-DE') {
       this.dataSource = new MatTableDataSource(CO2_DATAS_DE);
     } else {
@@ -139,6 +140,7 @@ export class Co2TableComponent implements OnInit {
           return item[property];
       }
     };
+    this.sanitize(this.dataSource.data);
   }
 
   applyFilter(event: Event) {
@@ -199,5 +201,11 @@ export class Co2TableComponent implements OnInit {
       // Deaktiviere die Schaltfläche zum Löschen der Sortierung
       disableClear: true,
     });
+  }
+
+  // Sie wird aufgerufen, wenn die Daten in der Tabelle angezeigt werden sollen
+  // Sie sorgt dafür, dass die Daten in der Tabelle sicher angezeigt werden
+  sanitize(data: any) {
+    return this.sanitizer.sanitize(SecurityContext.HTML, data);
   }
 }
