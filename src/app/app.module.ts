@@ -22,7 +22,6 @@ import { MatInputModule } from '@angular/material/input';
     HeaderComponent,
     FooterComponent,
     MenuComponent,
-
     Co2TableComponent,
   ],
   imports: [

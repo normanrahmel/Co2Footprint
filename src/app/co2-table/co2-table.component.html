@@ -3,7 +3,7 @@
   <input
     class="input-search"
     matInput
-    (keyup)="applyFilter($event)"
+    (keyup)="applyFilter($event); sanitize(dataSource)"
     placeholder="Filter"
   />
   <table mat-table [dataSource]="dataSource" matSort>
