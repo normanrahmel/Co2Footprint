@@ -9,41 +9,15 @@ export class HeaderComponent {
   direction: string;
   alignment: string;
   reverseOrder: boolean;
-  /*
-  ngOnInit() {
-    const language = navigator.language.toLowerCase();
-    if (
-      language.startsWith('ab') ||
-      language.startsWith('fa') ||
-      language.startsWith('he')
-    ) {
-      this.direction = 'rtl';
-    } else {
-      this.direction = 'ltr';
-    }
-  }*/
-  /*
-  ngOnInit() {
-    const language = navigator.language.toLowerCase();
-    //if (language.startsWith('ar')) {
-    if (language.startsWith('de')) {
-      this.direction = 'rtl';
-      this.alignment = 'start';
-    } else {
-      this.direction = 'ltr';
-      this.alignment = 'end';
-    }
-  }*/
+
   ngOnInit() {
     const language = navigator.language.toLowerCase();
     if (language.startsWith('ar')) {
-      //this.direction = 'rtl';
-      //this.alignment = 'start';
-      this.direction = 'ltr';
+      // Wenn die Sprache mit 'ar' beginnt, werden die Elemente in der Kopfzeile von rechts nach links angeordnet.
+      this.direction = 'ltl';
       this.alignment = 'start';
     } else {
-      //this.direction = 'ltr';
-      //this.alignment = 'start';
+      // Wenn die Sprache nicht mit 'ar' beginnt, werden die Elemente in der Kopfzeile von links nach rechts angeordnet.
       this.direction = 'rtl';
       this.alignment = 'start';
     }
