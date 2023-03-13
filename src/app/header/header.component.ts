@@ -12,8 +12,8 @@ export class HeaderComponent {
 
   ngOnInit() {
     const language = navigator.language.toLowerCase();
-    if (language.startsWith('ar')) {
-      // Wenn die Sprache mit 'ar' beginnt, werden die Elemente in der Kopfzeile von rechts nach links angeordnet.
+    if (language.startsWith('en')) {
+      // Wenn die Sprache mit 'en' beginnt, werden die Elemente in der Kopfzeile von rechts nach links angeordnet.
       this.direction = 'ltl';
       this.alignment = 'start';
     } else {
