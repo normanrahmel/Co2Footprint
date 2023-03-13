@@ -1,5 +1,5 @@
-<div class="text">
-  <div class="welcome-text" *ngIf="!isLanguageEnglish()">
+<div class="text" *ngIf="!isLanguageEnglish()">
+  <div class="welcome-text">
     Willkommen auf unserer CO2-Daten-Webseite!
     <br />
     <br />
@@ -24,24 +24,27 @@
   </div>
 </div>
 
-<div class="welcome-text" *ngIf="isLanguageEnglish()">
-  Welcome to our CO2 data website!
-  <br />
-  <br />
-  <p class="intro-text">
-    Here, you can get an overview of which countries and companies emit how much
-    CO2 annually. <br />
-    Our website provides the ability to filter and sort the data by country,
-    company, and emissions.
+<div class="text" *ngIf="isLanguageEnglish()">
+  <div class="welcome-text">
+    Welcome to our CO2 data website!
     <br />
     <br />
-    We are an interdisciplinary team developing professional websites for a
-    large non-profit organization dedicated to addressing climate change. <br />
-    Our website aims to provide more transparency on the impact of CO2 emissions
-    on the environment.
-    <br />
-    <br />
-    Thank you for visiting our website. We hope you find the information we
-    provide here helpful.
-  </p>
+    <p class="intro-text">
+      Here, you can get an overview of which countries and companies emit how
+      much CO2 annually. <br />
+      Our website provides the ability to filter and sort the data by country,
+      company, and emissions.
+      <br />
+      <br />
+      We are an interdisciplinary team developing professional websites for a
+      large non-profit organization dedicated to addressing climate change.
+      <br />
+      Our website aims to provide more transparency on the impact of CO2
+      emissions on the environment.
+      <br />
+      <br />
+      Thank you for visiting our website. We hope you find the information we
+      provide here helpful.
+    </p>
+  </div>
 </div>
