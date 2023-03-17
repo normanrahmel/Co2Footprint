@@ -117,11 +117,38 @@ export class DataService {
 
   constructor() {}
 
+  // Read operation
   getCO2Data(): CO2Data[] {
     if (navigator.language === 'de-DE') {
       return this.CO2_DATAS_DE;
     } else {
       return this.CO2_DATAS_EN;
+    }
+  }
+  // Update operation
+  updateCO2Data(index: number, updatedData: CO2Data): void {
+    if (navigator.language === 'de-DE') {
+      this.CO2_DATAS_DE[index] = updatedData;
+    } else {
+      this.CO2_DATAS_EN[index] = updatedData;
+    }
+  }
+
+  // Delete operation
+  deleteCO2Data(index: number): void {
+    if (navigator.language === 'de-DE') {
+      this.CO2_DATAS_DE.splice(index, 1);
+    } else {
+      this.CO2_DATAS_EN.splice(index, 1);
+    }
+  }
+
+  // Create operation
+  createCO2Data(newData: CO2Data): void {
+    if (navigator.language === 'de-DE') {
+      this.CO2_DATAS_DE.push(newData);
+    } else {
+      this.CO2_DATAS_EN.push(newData);
     }
   }
 }

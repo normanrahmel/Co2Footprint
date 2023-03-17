@@ -121,15 +121,4 @@ export class Co2TableComponent implements OnInit {
       disableClear: true,
     });
   }
-
-  /**
-   *
-   * @param data
-   * @returns  data
-   * Sanitizes the data to prevent XSS attacks
-   
-  sanitize(dataSource: MatTableDataSource<any>) {
-    return this.sanitizer.sanitize(SecurityContext.HTML, dataSource);
-  }
-  */
 }
