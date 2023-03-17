@@ -39,7 +39,12 @@ export class Co2TableComponent implements OnInit {
           return item[property];
       }
     };
-    this.sanitize(this.dataSource);
+    // Desinfizieren des Filterwerts in der MatTableDataSource
+    const sanitizedValue = this.sanitizer.sanitize(
+      SecurityContext.HTML,
+      this.dataSource.filter
+    );
+    this.dataSource.filter = sanitizedValue;
   }
 
   /**
@@ -47,6 +52,16 @@ export class Co2TableComponent implements OnInit {
    * Wird beim Eingeben eines Suchbegriffs in das Suchfeld aufgerufen
    */
   applyFilter(event: Event) {
+    // Zugriff auf das <input> Element, das das Event ausgelöst hat
+    const inputElement = event.target as HTMLInputElement;
+    // Desinfiziert den Wert des <input> Elements, um XSS-Angriffe zu verhindern
+    const sanitizedValue = this.sanitizer.sanitize(
+      SecurityContext.HTML,
+      inputElement.value
+    );
+    // Setzt den bereinigten Wert als Filter für die MatTableDataSource
+    this.dataSource.filter = sanitizedValue;
+
     const filterValue = (event.target as HTMLInputElement).value
       .trim()
       .toLowerCase();
@@ -112,8 +127,9 @@ export class Co2TableComponent implements OnInit {
    * @param data
    * @returns  data
    * Sanitizes the data to prevent XSS attacks
-   */
-  sanitize(data: any) {
-    return this.sanitizer.sanitize(SecurityContext.HTML, data);
+   
+  sanitize(dataSource: MatTableDataSource<any>) {
+    return this.sanitizer.sanitize(SecurityContext.HTML, dataSource);
   }
+  */
 }

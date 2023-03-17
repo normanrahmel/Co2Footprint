@@ -1,9 +1,8 @@
-<!--(keyup)="applyFilter($event)"-->
 <div class="mat-elevation-z8 table">
   <input
     class="input-search"
     matInput
-    (keyup)="applyFilter($event); sanitize(dataSource)"
+    (keyup)="applyFilter($event)"
     placeholder="Filter"
   />
   <table mat-table [dataSource]="dataSource" matSort>
