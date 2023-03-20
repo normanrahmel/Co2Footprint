@@ -28,11 +28,6 @@ export class DataService {
     { country: 'Katar', company: 'Qatar Petroleum', emissions: 50 },
     { country: 'Australien', company: 'BHP', emissions: 120 },
     { country: 'Iran', company: 'National Iranian Oil Co.', emissions: 180 },
-    {
-      country: 'Vereinigte Arabische Emirate',
-      company: 'ADNOC',
-      emissions: 85,
-    },
     { country: 'Frankreich', company: 'Total', emissions: 300 },
     { country: 'Kuwait', company: 'Kuwait Petroleum', emissions: 75 },
     { country: 'Vereinigtes Königreich', company: 'BP', emissions: 550 },
@@ -46,17 +41,6 @@ export class DataService {
     { country: 'Italien', company: 'ENI', emissions: 250 },
     { country: 'Argentinien', company: 'YPF', emissions: 50 },
     { country: 'Kolumbien', company: 'ECOPETROL', emissions: 50 },
-    {
-      country: 'Südkorea',
-      company: 'Korea National Oil Corp.',
-      emissions: 150,
-    },
-    { country: 'Polen', company: 'PKN Orlen', emissions: 100 },
-    { country: 'Ukraine', company: 'Naftogaz', emissions: 50 },
-    { country: 'Türkei', company: 'Turkmenistan', emissions: 50 },
-    { country: 'Österreich', company: 'OMV', emissions: 50 },
-    { country: 'Belgien', company: 'Total', emissions: 50 },
-    { country: 'Tschechien', company: 'CEZ', emissions: 50 },
   ];
 
   // Englische Daten
@@ -104,15 +88,6 @@ export class DataService {
     { country: 'Peru', company: 'Perenco', emissions: 50 },
     { country: 'Chile', company: 'Enap', emissions: 50 },
     { country: 'Ecuador', company: 'Petroamazonas', emissions: 50 },
-    { country: 'Venezuela', company: 'PDVSA', emissions: 50 },
-    {
-      country: 'Bolivia',
-      company: 'Yacimientos Petroliferos Fiscales Bolivianos',
-      emissions: 50,
-    },
-    { country: 'Estonia', company: 'Eesti Energia', emissions: 50 },
-    { country: 'Finland', company: 'Neste', emissions: 50 },
-    { country: 'Sweden', company: 'Statoil', emissions: 50 },
   ];
 
   constructor() {}
@@ -125,6 +100,7 @@ export class DataService {
       return this.CO2_DATAS_EN;
     }
   }
+
   // Update operation
   updateCO2Data(index: number, updatedData: CO2Data): void {
     if (navigator.language === 'de-DE') {
